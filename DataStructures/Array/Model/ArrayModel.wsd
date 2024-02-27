@@ -1,0 +1,10 @@
+@startuml Array
+title Array
+class Array<T>
+{
+    - _innerArray: T[]
+    + setItem(index:int, value:T): void
+    + getItem(index: int): T
+}
+
+@enduml
