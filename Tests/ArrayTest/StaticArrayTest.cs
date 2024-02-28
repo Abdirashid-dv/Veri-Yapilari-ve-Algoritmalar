@@ -28,48 +28,95 @@ public class StaticArrayTests
     [Fact]
     public void Get_Item_Test()
     {
-        throw new NotImplementedException();
+        // act
+        var item = _array.GetItem(2);
+
+        // assert
+        Assert.Equal('c', item);
     }
 
     [Fact]
     public void SetItem_ChangesValue()
     {
-        throw new NotImplementedException();
+        // act
+        _array.SetItem(3, 'e');
+        var item = _array.GetItem(3);
+
+        // assert
+        Assert.Equal('e', item);
     }
 
     [Fact]
     public void SetItem_ThrowsIndexOutOfRangeException_ForInvalidIndex()
     {
-        throw new NotImplementedException();
+        // assert
+        Assert.Throws<IndexOutOfRangeException>(() => _array.SetItem(-1, 'f'));
     }
 
     [Fact]
     public void GetItem_ThrowsIndexOutOfRangeException_ForInvalidIndex()
     {
-        throw new NotImplementedException();
+        Assert.Throws<IndexOutOfRangeException>(() => _array.GetItem(4));
     }
 
     [Fact]
     public void Length_Test()
     {
-        throw new NotImplementedException();
+        var items = new StaticArray<int>(new int[] { 1, 2, 3, 4, 5, 6 });
+
+        Assert.Equal(6, items.Length);
     }
 
     [Fact]
     public void Constructor_with_IEnumerable_Parameter_Test()
     {
-        throw new NotImplementedException();
+        // Act
+        var items = new StaticArray<int>(new int[] { 1, 2, 3, 4, 5, 6 }); // StaticArray<int>(list);
+        var length = items.Length;
+        var item = items.GetItem(0);
+
+        // Assert
+        Assert.Equal(6, length);
+        Assert.Equal(1, item);
     }
 
     [Fact]
     public void ConstructorWithCollection_InitializesArrayWithCorrectLengthAndValues()
     {
-        throw new NotImplementedException();
+        // Act
+        var items = new StaticArray<int>(new int[] { 1, 2, 3, 4, 5, 6 });
+
+        // Assert
+        Assert.Equal(6, items.Length);
+        Assert.Equal(1, items.GetItem(0));
+        Assert.Equal(2, items.GetItem(1));
+        Assert.Equal(3, items.GetItem(2));
+        Assert.Equal(4, items.GetItem(3));
+        Assert.Equal(5, items.GetItem(4));
+        Assert.Equal(6, items.GetItem(5));
     }
 
     [Fact]
     public void GetEnumerator_ReturnsAllItemsInArray()
     {
-        throw new NotImplementedException();
+        // Arrange
+        var enumerator = _array.GetEnumerator();
+        var items = new char[_array.Length];
+        int i = 0;
+
+        //Act
+        while (enumerator.MoveNext())
+        {
+            items[i] = (char)enumerator.Current;
+            i++;
+        }
+
+        // Assert
+        Assert.Collection(items,
+        item => Assert.Equal('a', item),
+        item => Assert.Equal('b', item),
+        item => Assert.Equal('c', item),
+        item => Assert.Equal('d', item)
+        );
     }
 }
