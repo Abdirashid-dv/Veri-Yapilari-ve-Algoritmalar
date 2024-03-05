@@ -1,11 +1,36 @@
 @startuml StaticArray
 title StaticArray
 
+
+namespace DataStructures.Array.Contracts {
+    interface IDynamicArray<T> {
+        +Count: int
+        +Capacity: int
+        +RemoveAt(position: int): T
+        +Swap(position1: int, position2: int): void
+        +DoubleArray(): void
+    }
+}
+namespace DataStructures.Array.Contracts{
+    interface IStaticArray<T>{
+        +Length:int
+        +setItem(index:int,value:T):void
+        +getItem(index:int):T
+    }
+}
 namespace DataStructures.Array{
     class StaticArray<T>{
         -_innerArray:T[]
         +setItem(index:int,value:T):void
         +getItem(index:int):T
+    }
+
+    class Array<T> extends StaticArray<T>{
+        +Count: int
+        +Capacity: int
+        +RemoveAt(position: int): T
+        +Swap(position1: int, position2: int): void
+        +DoubleArray(): void
     }
 }
 @enduml

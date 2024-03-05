@@ -56,6 +56,7 @@ public class StaticArrayTests
     [Fact]
     public void GetItem_ThrowsIndexOutOfRangeException_ForInvalidIndex()
     {
+        // assert
         Assert.Throws<IndexOutOfRangeException>(() => _array.GetItem(4));
     }
 
