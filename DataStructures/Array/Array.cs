@@ -6,7 +6,7 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
 {
     private int index = 0;
 
-    public int Count => index + 1;
+    public int Count => index;
 
     public int Capacity => _innerArray.Length;
 
@@ -43,8 +43,8 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         {
             Swap(i, i + 1);
         }
-
         index--;
+        ShrinkArray();
         return _innerArray[position];
 
     }
@@ -58,5 +58,18 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         _innerArray[position1] = _innerArray[position2];
         _innerArray[position2] = temp;
 
+    }
+
+    private void ShrinkArray()
+    {
+        if (Count < Capacity / 4)
+        {
+            var newArray = new T[Capacity / 2];
+            for (int i = 0; i < Count; i++)
+            {
+                newArray[i] = _innerArray[i];
+            }
+            _innerArray = newArray;
+        }
     }
 }
