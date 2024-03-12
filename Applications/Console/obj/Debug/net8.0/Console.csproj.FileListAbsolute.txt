@@ -36,3 +36,5 @@ C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\Applications\Console\obj\Debug
 C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\Applications\Console\obj\Debug\net8.0\Console.pdb
 C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\Applications\Console\obj\Debug\net8.0\Console.genruntimeconfig.cache
 C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\Applications\Console\obj\Debug\net8.0\ref\Console.dll
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\Applications\Console\bin\Debug\net8.0\LinkedList.dll
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\Applications\Console\bin\Debug\net8.0\LinkedList.pdb

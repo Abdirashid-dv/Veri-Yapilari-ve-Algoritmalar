@@ -1,0 +1,12 @@
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\bin\Debug\net8.0\LinkedList.deps.json
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\bin\Debug\net8.0\LinkedList.dll
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\bin\Debug\net8.0\LinkedList.pdb
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\LinkedList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\LinkedList.AssemblyInfoInputs.cache
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\LinkedList.AssemblyInfo.cs
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\LinkedList.csproj.CoreCompileInputs.cache
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\LinkedList.sourcelink.json
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\LinkedList.dll
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\refint\LinkedList.dll
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\LinkedList.pdb
+C:\Users\Abdirashid\Veri-Yapilari-ve-Algoritmalar\DataStructures\LinkedList\obj\Debug\net8.0\ref\LinkedList.dll
