@@ -8,13 +8,27 @@ linkedList.AddLast("Harun");
 linkedList.AddLast("Kayra");
 linkedList.AddLast("Caner");
 
-System.Console.WriteLine(linkedList.Head);
-System.Console.WriteLine(linkedList.Head.Next);
-System.Console.WriteLine(linkedList.Head.Next.Next);
-System.Console.WriteLine(linkedList.Head.Next.Next.Next);
-System.Console.WriteLine(linkedList.Head.Next.Next.Next.Next);
+// System.Console.WriteLine(linkedList.Head);
+// System.Console.WriteLine(linkedList.Head.Next);
+// System.Console.WriteLine(linkedList.Head.Next.Next);
+// System.Console.WriteLine(linkedList.Head.Next.Next.Next);
+// System.Console.WriteLine(linkedList.Head.Next.Next.Next.Next);
 
+// var c = linkedList.Head;
 
+// while (c != null)
+// {
+//     System.Console.WriteLine(c);
+//     c = c.Next;
+// }
+
+// foreach (var item in linkedList)
+// {
+//     if (item.Contains("a"))
+//     {
+//         System.Console.WriteLine(item);
+//     }
+// }
 // var node = new SinglyLinkedListNode<string>("Omer");
 
 // var node1 = new SinglyLinkedListNode<string>();
