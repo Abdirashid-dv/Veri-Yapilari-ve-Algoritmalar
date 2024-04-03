@@ -45,8 +45,4 @@ public class StaticArray<T> : IArray<T>, IEnumerable
         if (index < 0 || index >= _innerArray.Length)
             throw new IndexOutOfRangeException();
     }
-
-
-
-
 }
