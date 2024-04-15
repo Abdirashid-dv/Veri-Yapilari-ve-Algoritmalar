@@ -1,9 +1,9 @@
 ﻿using System.Collections;
+using DataStructures.Array.Contracts;
 namespace DataStructures.Array;
 
 public class StaticArray<T> : IArray<T>, IEnumerable
 {
-
     protected T[] _innerArray;
     public StaticArray()
     {

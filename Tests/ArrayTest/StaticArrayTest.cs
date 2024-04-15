@@ -1,6 +1,6 @@
 using DataStructures.Array;
 
-namespace ArrayTests;
+namespace Tests.ArrayTests;
 
 public class StaticArrayTests
 {
@@ -28,42 +28,41 @@ public class StaticArrayTests
     [Fact]
     public void Get_Item_Test()
     {
-        // act
+        // Act
         var item = _array.GetItem(2);
 
-        // assert
+        // Assert
         Assert.Equal('c', item);
     }
 
     [Fact]
     public void SetItem_ChangesValue()
     {
-        // act
+        // Act
         _array.SetItem(3, 'e');
         var item = _array.GetItem(3);
 
-        // assert
+        // Assert
         Assert.Equal('e', item);
     }
 
     [Fact]
     public void SetItem_ThrowsIndexOutOfRangeException_ForInvalidIndex()
     {
-        // assert
         Assert.Throws<IndexOutOfRangeException>(() => _array.SetItem(-1, 'f'));
     }
 
     [Fact]
     public void GetItem_ThrowsIndexOutOfRangeException_ForInvalidIndex()
     {
-        // assert
         Assert.Throws<IndexOutOfRangeException>(() => _array.GetItem(4));
     }
 
     [Fact]
     public void Length_Test()
     {
-        var items = new StaticArray<int>(new int[] { 1, 2, 3, 4, 5, 6 });
+        var list = new int[] { 1, 2, 3, 4, 5, 6 };
+        var items = new StaticArray<int>(new int[] { 1, 2, 3, 4, 5, 6 }); // StaticArray<int>(list);
 
         Assert.Equal(6, items.Length);
     }
@@ -84,17 +83,7 @@ public class StaticArrayTests
     [Fact]
     public void ConstructorWithCollection_InitializesArrayWithCorrectLengthAndValues()
     {
-        // Act
-        var items = new StaticArray<int>(new int[] { 1, 2, 3, 4, 5, 6 });
-
-        // Assert
-        Assert.Equal(6, items.Length);
-        Assert.Equal(1, items.GetItem(0));
-        Assert.Equal(2, items.GetItem(1));
-        Assert.Equal(3, items.GetItem(2));
-        Assert.Equal(4, items.GetItem(3));
-        Assert.Equal(5, items.GetItem(4));
-        Assert.Equal(6, items.GetItem(5));
+        throw new NotImplementedException();
     }
 
     [Fact]

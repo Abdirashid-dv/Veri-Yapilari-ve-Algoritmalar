@@ -1,4 +1,5 @@
-﻿using DataStructures.Array.Contracts;
+﻿using System.Collections;
+using DataStructures.Array.Contracts;
 
 namespace DataStructures.Array;
 
@@ -16,7 +17,6 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         _innerArray[index] = value;
         index++;
     }
-
 
     public T RemoveAt(int position)
     {

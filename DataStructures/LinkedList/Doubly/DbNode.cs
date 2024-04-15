@@ -6,16 +6,16 @@ public class DbNode<T>
     public DbNode<T> Next { get; set; }
     public DbNode<T> Prev { get; set; }
 
-    public DbNode(T? value) : this()
-    {
-        Value = value;
-    }
-
     public DbNode()
     {
         Next = null;
         Prev = null;
     }
+    public DbNode(T? value) : this()
+    {
+        Value = value;
+    }
+
 
     public override string? ToString()
     {

@@ -4,29 +4,26 @@ namespace Tests.ArrayTests;
 
 public class ArrayTests
 {
-
-    private Array<char> _array;
+    private Array<float> _array;
 
     public ArrayTests()
     {
-        _array = new Array<char>();
-        _array.Add('h');
-        _array.Add('e');
-        _array.Add('l');
-        _array.Add('l');
-        _array.Add('o');
+        // Arrange
+        _array = new Array<float>();
+        _array.Add(5.0f);
+        _array.Add((float)15.0);
+        _array.Add((float)35.0);
+        _array.Add((float)45.0);
     }
-
 
     [Fact]
     public void Add_AddsElement_CountIncreases()
     {
-        // act
-        _array.Add('w');
+        // Act
+        _array.Add(62.0f);
 
-        // assert
-        Assert.Equal(6, _array.Count);
-
+        // Assert
+        Assert.Equal(5, _array.Count);
     }
 
     [Fact]
@@ -34,82 +31,81 @@ public class ArrayTests
     {
         // Act
         _array.RemoveAt(0);
-        // _array.RemoveAt(2);
 
         // Assert
-        Assert.Equal(4, _array.Count);
+        Assert.Equal(3, _array.Count);
     }
 
     [Fact]
     public void RemoveAt_RemovesCorrectElement()
     {
         // Act
-        var item = _array.RemoveAt(0);
+        var item = _array.RemoveAt(1);
 
         // Assert
-        Assert.Equal('e', item);
+        Assert.Equal(15.0f, item);
     }
 
     [Fact]
     public void RemoveAt_ThrowsIndexOutOfRangeException_WhenIndexOutOfRange()
     {
-        // Asser
-        Assert.Throws<IndexOutOfRangeException>(() => _array.RemoveAt(6));
+        // Assert
+        Assert.Throws<IndexOutOfRangeException>(() => _array.RemoveAt(5));
     }
 
     [Fact]
     public void Swap_SwapsElements()
     {
-
         // Act
-        _array.Swap(0, 3);
+        _array.Add(7.25f);
+        _array.Swap(1, 4);
 
         // Assert
-        Assert.Equal('l', _array.GetItem(0));
-        Assert.Equal('h', _array.GetItem(3));
-
-
+        Assert.Equal(7.25f, _array.GetItem(1));
+        Assert.Equal(15.0f, _array.GetItem(4));
     }
 
     [Fact]
     public void ShrinkArray_DoesNotShrinkCapacity_WhenCountIsGreaterThanQuarterOfCapacity()
     {
         // Act
+        _array.Add(8.0f);
         _array.RemoveAt(0);
         _array.RemoveAt(0);
+
 
         // Assert
         Assert.Equal(8, _array.Capacity);
-
     }
 
     [Fact]
     public void ShrinkArray_ShrinksCapacity_WhenCountIsLessThanQuarterOfCapacity()
     {
+        // Act
+        _array.Add(8.0f);
         _array.RemoveAt(0);
         _array.RemoveAt(0);
         _array.RemoveAt(0);
 
         // Assert
         Assert.Equal(4, _array.Capacity);
-
     }
 
     [Fact]
-    public void Swap_Without_Additional_Variable()
+    public void Swap_Without_Extra_Variable()
     {
         // Arrange
-        int a = 50;
-        int b = 20;
+        int a = 60;
+        int b = 10;
 
         // Act
-        a = a + b; // a = 70, b = 20
-        b = a - b; // a = 70, b = 50
-        a = a - b; // a = 20, b = 50
-
+        a = a + b; // a=70 b=10
+        b = a - b; // a=70 b=60
+        a = a - b; // a=10 b=60
 
         // Assert
-        Assert.Equal(20, a);
-        Assert.Equal(50, b);
+        Assert.Equal(10, a);
+        Assert.Equal(60, b);
     }
+
 }
