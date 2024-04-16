@@ -154,7 +154,7 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
 
         // Son elemana kadar git
         var current = Head;
-        var prev = current;
+        var prev = current; // current'ın önceki elemanını tutacak
         while (current != null)
         {
             prev = current;
@@ -234,6 +234,26 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
         }
 
         throw new Exception();
+    }
+
+    public SinglyLinkedList<T> ReverseList(SinglyLinkedListNode<T> head)
+    {
+        if (head is null)
+        {
+            throw new ArgumentNullException(nameof(head));
+        }
+
+        SinglyLinkedList<T> reversedList = new SinglyLinkedList<T>();
+
+        var current = head;
+        while (current is not null)
+        {
+            reversedList.AddFirst(current.Value);
+            current = current.Next;
+        }
+
+        return reversedList;
+
     }
 
     public IEnumerator<T> GetEnumerator()

@@ -1031,6 +1031,9 @@
       "Array/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "LinkedList": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Array.dll": {}
         },
@@ -1046,6 +1049,16 @@
         },
         "runtime": {
           "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "LinkedList/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/LinkedList.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LinkedList.dll": {}
         }
       }
     }
@@ -2584,6 +2597,11 @@
       "type": "project",
       "path": "../../Libs/Entities/Entities.csproj",
       "msbuildProject": "../../Libs/Entities/Entities.csproj"
+    },
+    "LinkedList/1.0.0": {
+      "type": "project",
+      "path": "../../DataStructures/LinkedList/LinkedList.csproj",
+      "msbuildProject": "../../DataStructures/LinkedList/LinkedList.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using DataStructures.Array.Contracts;
+using DataStructures.LinkedList.Singly;
 
 namespace DataStructures.Array;
 
@@ -46,6 +47,29 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         _innerArray[position2] = temp;
     }
 
+    public bool ContainsDuplicate(T[] nums)
+    {
+        var list = new List<T>();
+        foreach (var num in nums)
+        {
+            if (list.Contains(num))
+            {
+                return true;
+            }
+            list.Add(num);
+        }
+        return false;
+    }
+
+    public SinglyLinkedList<T> ToSingleLinkedList()
+    {
+        var list = new SinglyLinkedList<T>();
+        for (int i = 0; i < Count; i++)
+        {
+            list.AddLast(_innerArray[i]);
+        }
+        return list;
+    }
     private void CheckDoubleArray()
     {
         //if (Count.Equals(Capacity))
