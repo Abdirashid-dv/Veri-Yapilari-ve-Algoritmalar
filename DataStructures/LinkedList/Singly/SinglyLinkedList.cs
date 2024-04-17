@@ -131,6 +131,20 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
         return;
     }
 
+    public void AddFirst(SinglyLinkedListNode<T> item)
+    {
+        if (IsEmpty)
+        {
+            Head = item;
+            _count++;
+            return;
+        }
+
+        item.Next = Head;
+        Head = item;
+        _count++;
+        return;
+    }
     public void AddLast(T item)
     {
         // T ifadesini düğüme çevir
@@ -264,5 +278,19 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();
+    }
+
+    public Stack<T> ToStack()
+    {
+        var stack = new Stack<T>();
+
+        var current = Head;
+        while (current is not null)
+        {
+            stack.Push(current.Value);
+            current = current.Next;
+        }
+
+        return stack;
     }
 }

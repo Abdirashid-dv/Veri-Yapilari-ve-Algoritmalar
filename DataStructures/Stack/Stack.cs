@@ -1,4 +1,5 @@
-﻿using DataStructures.Stack.Contracts;
+﻿using DataStructures.LinkedList.Doubly;
+using DataStructures.Stack.Contracts;
 
 namespace DataStructures.Stack;
 
@@ -48,4 +49,10 @@ public class Stack<T> : IStack<T>
     {
         _stack.Push(item);
     }
+
+    public DoublyLinkedList<T> ToDoublyLinkedList()
+    {
+        return _stack.ToDoublyLinkedList();
+    }
 }
+

@@ -1,3 +1,4 @@
+using DataStructures.LinkedList.Doubly;
 using DataStructures.Stack.Contracts;
 
 namespace DataStructures.Stack;
@@ -42,5 +43,15 @@ public class ArrayStack<T> : IStack<T>
     public void Push(T item)
     {
         _innerArray.Add(item);
+    }
+
+    public DoublyLinkedList<T> ToDoublyLinkedList()
+    {
+        DoublyLinkedList<T> doublyLinkedList = new DoublyLinkedList<T>();
+        for (int i = LastIndex; i >= 0; i--)
+        {
+            doublyLinkedList.AddLast(_innerArray[i]);
+        }
+        return doublyLinkedList;
     }
 }

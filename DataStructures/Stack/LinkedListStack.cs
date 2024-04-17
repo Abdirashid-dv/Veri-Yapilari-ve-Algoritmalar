@@ -41,4 +41,16 @@ public class LinkedListStack<T> : IStack<T>
     {
         _innerList.AddFirst(item);
     }
+
+    public DoublyLinkedList<T> ToDoublyLinkedList()
+    {
+        DoublyLinkedList<T> doublyLinkedList = new DoublyLinkedList<T>();
+        var currentNode = _innerList.Head;
+        while (currentNode != null)
+        {
+            doublyLinkedList.AddLast(currentNode.Value);
+            currentNode = currentNode.Next;
+        }
+        return doublyLinkedList;
+    }
 }

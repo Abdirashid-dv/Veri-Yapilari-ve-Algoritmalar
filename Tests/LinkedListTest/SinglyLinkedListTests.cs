@@ -149,4 +149,47 @@ public class SinglyLinkedListTests
 
         Assert.Throws<Exception>(() => linkedList.Remove(new SinglyLinkedListNode<int>(4)));
     }
+
+    [Fact]
+    public void AddFirst_with_SinglyLinkedListNode_Parameters()
+    {
+        // Arrange
+        var linkedList = new SinglyLinkedList<int>();
+        var node1 = new SinglyLinkedListNode<int>(23);
+        var node2 = new SinglyLinkedListNode<int>(13);
+        var node3 = new SinglyLinkedListNode<int>(55);
+        var node4 = new SinglyLinkedListNode<int>(6);
+        var node5 = new SinglyLinkedListNode<int>(34);
+
+        // Act
+        linkedList.AddFirst(node1);
+        linkedList.AddFirst(node2);
+        linkedList.AddFirst(node3);
+        linkedList.AddFirst(node4);
+        linkedList.AddFirst(node5);
+
+        // Assert
+        Assert.Equal(node5, linkedList.Head);
+    }
+
+    [Fact]
+    public void ToStack_Test()
+    {
+        // Arrange
+        var linkedList = new SinglyLinkedList<int>();
+        linkedList.AddLast(23);
+        linkedList.AddLast(13);
+        linkedList.AddLast(55);
+        linkedList.AddLast(6);
+        linkedList.AddLast(34);
+
+        // Act
+        var stack = linkedList.ToStack();
+        var peekedItem = stack.Peek();
+
+        // Assert
+        Assert.Equal(34, peekedItem);
+    }
+
 }
+

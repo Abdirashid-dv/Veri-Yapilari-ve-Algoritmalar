@@ -1,8 +1,7 @@
-namespace Tests.StackTests;
-
-using System;
 using DataStructures.Stack;
 using Xunit;
+namespace Tests.StackTests;
+
 
 public class StackTests
 {
@@ -44,5 +43,23 @@ public class StackTests
     {
         var stack = new Stack<int>("Array");
         Assert.Throws<Exception>(() => stack.Pop());
+    }
+
+    [Fact]
+    public void ToDoublyLinkedList_Test()
+    {
+        // Arrange
+        var stack = new Stack<int>();
+        stack.Push(15);
+        stack.Push(26);
+        stack.Push(39);
+        stack.Push(10);
+
+        // Act
+        var doublyLinkedList = stack.ToDoublyLinkedList();
+        var count = doublyLinkedList.Count;
+
+        // Assert
+        Assert.Equal(4, count);
     }
 }
