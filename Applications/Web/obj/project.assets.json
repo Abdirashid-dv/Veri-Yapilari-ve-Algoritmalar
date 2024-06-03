@@ -1032,7 +1032,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "LinkedList": "1.0.0"
+          "LinkedList": "1.0.0",
+          "Queue": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Array.dll": {}
@@ -1059,6 +1060,16 @@
         },
         "runtime": {
           "bin/placeholder/LinkedList.dll": {}
+        }
+      },
+      "Queue/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Queue.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Queue.dll": {}
         }
       }
     }
@@ -2602,6 +2613,11 @@
       "type": "project",
       "path": "../../DataStructures/LinkedList/LinkedList.csproj",
       "msbuildProject": "../../DataStructures/LinkedList/LinkedList.csproj"
+    },
+    "Queue/1.0.0": {
+      "type": "project",
+      "path": "../../DataStructures/Queue/Queue.csproj",
+      "msbuildProject": "../../DataStructures/Queue/Queue.csproj"
     }
   },
   "projectFileDependencyGroups": {

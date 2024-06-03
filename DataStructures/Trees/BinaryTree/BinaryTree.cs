@@ -1,10 +1,10 @@
 using System.Collections;
 
-namespace Datastructures.Trees.BinaryTree;
+namespace DataStructures.Trees.BinaryTree;
 
 public class BinaryTree<T> : IEnumerable
 {
-    public Node<T>? Root { get; set; }
+    public Node<T> Root { get; set; }
     public int Count { get; set; }
 
     public BinaryTree()
@@ -14,17 +14,15 @@ public class BinaryTree<T> : IEnumerable
 
     public BinaryTree(IEnumerable<T> collection) : this()
     {
-
         foreach (var item in collection)
-        {
             Insert(item);
-        }
-
     }
 
     public T Insert(T value)
     {
         var newNode = new Node<T>(value);
+
+        // Root ?
         if (Root == null)
         {
             Root = newNode;
@@ -35,27 +33,20 @@ public class BinaryTree<T> : IEnumerable
         var list = new List<Node<T>>();
         var q = new Queue<Node<T>>();
         q.Enqueue(Root);
-
         while (q.Count > 0)
         {
             var temp = q.Dequeue();
             list.Add(temp);
-
             if (temp.Left != null)
-            {
                 q.Enqueue(temp.Left);
-            }
             else
             {
                 temp.Left = newNode;
                 Count++;
                 return value;
             }
-
             if (temp.Right != null)
-            {
                 q.Enqueue(temp.Right);
-            }
             else
             {
                 temp.Right = newNode;
@@ -63,21 +54,17 @@ public class BinaryTree<T> : IEnumerable
                 return value;
             }
         }
-
-        throw new Exception("Could not insert the value");
+        throw new Exception("The insertion operation failed.");
     }
 
     public static List<Node<T>> PreOrder(Node<T> root, List<Node<T>> list)
     {
-        if (root == null)
+        if (!(root == null))
         {
-            return list;
+            list.Add(root);
+            PreOrder(root.Left, list);
+            PreOrder(root.Right, list);
         }
-
-        list.Add(root);
-        PreOrder(root.Left, list);
-        PreOrder(root.Right, list);
-
         return list;
     }
 
@@ -103,9 +90,8 @@ public class BinaryTree<T> : IEnumerable
         return list;
     }
 
-    public static List<T>? InOrderIterationTraverse(Node<T> root)
+    public static List<T> InOrderIterationTraverse(Node<T> root)
     {
-
         if (root == null)
             return null;
 
@@ -158,7 +144,8 @@ public class BinaryTree<T> : IEnumerable
 
     public IEnumerator GetEnumerator()
     {
-        return LevelOrderTraverse(this.Root).GetEnumerator();
+        // return LevelOrderTraverse(this.Root).GetEnumerator();
+        return InOrderIterationTraverse(this.Root).GetEnumerator();
     }
 
     public T Delete(T value)
@@ -173,11 +160,12 @@ public class BinaryTree<T> : IEnumerable
 
     public static int NumberOfHalfNodes(Node<T> root)
     {
-        return BinaryTree<T>.LevelOrderTraverse(root)
-        .Where(node => (node.Left != null && node.Right == null) ||
-        (node.Left == null && node.Right != null))
-        .ToList()
-        .Count;
+        return BinaryTree<T>
+            .LevelOrderTraverse(root)
+            .Where(node => (node.Left != null && node.Right == null)
+                || (node.Left == null && node.Right != null))
+            .ToList()
+            .Count;
     }
 
     public static int NumberOfFullNodes(Node<T> root) =>
@@ -211,4 +199,5 @@ public class BinaryTree<T> : IEnumerable
             .Count;
         */
     }
+
 }

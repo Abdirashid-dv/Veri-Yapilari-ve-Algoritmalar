@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 <ItemGroup>
       <ProjectReference Include="..\LinkedList\LinkedList.csproj" />
+      <ProjectReference Include="..\Queue\Queue.csproj" />
     </ItemGroup>
 
   <PropertyGroup>
